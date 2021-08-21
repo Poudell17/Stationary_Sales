@@ -1,0 +1,85 @@
+CREATE TABLE UserInfo(
+	UserId	            uniqueidentifier not null,
+	UserName	    varchar(200),
+	EMail	            varchar(200),
+	UserName	    varchar(200),
+	Password	    varbinary(8000),
+	Isactive	    bit,
+	CreatedOn	    date
+);
+CREATE TABLE UserRole(
+	RoleId	            uniqueidentifier not null,
+	RoleName	    varchar(200),
+	CreatedOn	    date,
+	CreatedBy	    varchar(100),
+);
+CREATE TABLE InfoRole(
+	UserId 	    uniqueidentifier,
+	RoleId	            uniqueidentifier,
+	Info_Role_ID		uniqueidentifier
+);
+
+
+
+
+
+############################# LOGIN FORM KO BACKCODE ##########################################################
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+
+namespace WindowsFormsApplication1
+{
+    public partial class Login : Form
+    {
+        public Login()
+        {
+            InitializeComponent();
+        }                                         //dataSourse=Database enginename,Catalog=databasename/                                      
+        SqlConnection conn = new SqlConnection(@"Data Source=XXXXXXX ; Initial Catalog=Salesrep;Integrated Security=True;");
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            SqlCommand sqlcmd = new SqlCommand("Store Procedure",conn);
+
+            sqlcmd.CommandType = CommandType.StoredProcedure;
+
+            sqlcmd.Parameters.AddWithValue("@userName", txtUsername.Text);
+            sqlcmd.Parameters.AddWithValue("@password", txtPassword.Text);
+            
+            sqlcmd.Parameters.Add("@Status", SqlDbType.VarChar, 200);
+            sqlcmd.Parameters["@Status"].Direction = ParameterDirection.Output;
+
+            conn.Open();
+
+            var res = sqlcmd.ExecuteNonQuery();
+            String status = sqlcmd.Parameters["@Status"].Value.ToString();
+
+            if (status == "Sucess")
+            {
+                lblMessage.Text = status;
+                this.Close();
+                //open main page here//
+            }
+            else
+            {
+                lblMessage.Text = status;
+            }
+            
+            conn.Close();
+        }
+
+        private void btnCancle_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
+

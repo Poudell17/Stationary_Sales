@@ -1,0 +1,33 @@
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.exe.config
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.exe
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.pdb
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.csprojResolveAssemblyReference.cache
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Main_Form.resources
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Properties.Resources.resources
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.SUPPLIER.resources
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.csproj.GenerateResource.Cache
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.exe
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.pdb
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.LOGIN.resources
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.PRODUCT.resources
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.PURCHASE.resources
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.CUSTOMER.resources
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.SALES_REPORT.resources
+S:\Assignment\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.CREATE_USER.resources
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.exe.config
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.exe
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.pdb
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.exe
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.pdb
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.CREATE_USER.resources
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.CUSTOMER.resources
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.PRODUCT.resources
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.LOGIN.resources
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Main_Form.resources
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Properties.Resources.resources
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.PURCHASE.resources
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.SALES_REPORT.resources
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.SUPPLIER.resources
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.csproj.GenerateResource.Cache
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.csprojAssemblyReference.cache
+D:\Saroj D0c\Database\Visual Studio Prz\Stationary_Sales_Rep\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.csproj.CoreCompileInputs.cache
