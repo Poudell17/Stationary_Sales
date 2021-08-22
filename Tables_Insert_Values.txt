@@ -1,0 +1,210 @@
+************************************************** USING MSSQL FOR DATABASE ****************************************************
+
+CREATE DATABASE Stationary_Sales
+CREATE TABLE Supplier(
+ 	Supplier_Id	    uniqueidentifier not null,
+        Supplier_Name	    varchar(400),
+        Supplier_Address    varchar(500),
+        Contact	            bigint,
+        CreatedOn	    Date,
+        CreatedBy	    varchar(400)
+);
+CREATE TABLE Product(
+	Product_Id	    uniqueidentifier not null,
+	Product_Name	    varchar(400),
+	Size	            varchar(50),
+	Brand	            varchar(100),
+	UOM	            varchar(100),
+	MinStockLevel	    int,
+	Sales_Price	    int
+);
+CREATE TABLE Purchase(
+	Product_Id	    uniqueidentifier,
+	Pur_Date	    date,
+	Pur_Quantity	    int,
+	Pur_Rate	    int,
+	Supplier_Id	    uniqueidentifier,
+	Purchased_Id	    uniqueidentifier
+);
+CREATE TABLE Customer(
+	Customer_Id	    uniqueidentifier,
+	Customer_Name	    Varchar(400),
+	Customer_Address    Varchar(400),
+	Customer_Num	    bigint
+);
+CREATE TABLE Sales_Report(
+	Sales_Id	    uniqueidentifier,
+	Product_Id	    uniqueidentifier,	
+	Sales_Date	    date,
+	Sales_Quantity	    int,
+	Customer_Id	    uniqueidentifier
+);
+CREATE TABLE User_Info(
+	User_Id	            uniqueidentifier not null primary key,
+	User_Name	    varchar(200),
+	E_Mail	            varchar(200),
+	UserName	    varchar(300),
+	Password	    varbinary(8000),
+	Isactive	    bit,
+	Created_On	    date
+);
+CREATE TABLE User_Role(
+	Role_Id	            uniqueidentifier not null primary key,
+	Role_Name	    varchar(300),
+	Created_On	    date,
+	Created_By	    varchar(200),
+);
+CREATE TABLE Info_Role(
+	User_Id 	    uniqueidentifier,
+	Role_Id	            uniqueidentifier,
+	Info_Role_id	uniqueidentifier primary key not null
+);
+
+##########################INSERT VALUES INTO Supplier Table###################################################
+
+SELECT * FROM Supplier
+DECLARE @id uniqueidentifier 
+SET @id=NEWID();
+
+INSERT INTO Supplier values(
+	@id,'Yekta Publication','Thankot-5','9845654456','2018-3-11','Company')
+
+INSERT INTO Supplier values(
+	NEWID(),'Chaudhary Group','Kakani-5','9849874456','2014-3-11','')
+	
+INSERT INTO Supplier values(
+	NEWID(),'Oxford Publication','Kathmandu','9840004456','2015-12-5','')
+	;
+INSERT INTO Supplier values(
+	NEWID(),'Alpine Group','Kakani','9849994456','2016-2-15','')
+	;
+INSERT INTO Supplier values(
+	NEWID(),'BPC','New Road','9840090456','2015-5-5','')
+	;
+INSERT INTO Supplier values(
+	NEWID(),'Janta Publication','Lalitpur','9845666756','2017-2-15','')
+	;
+INSERT INTO Supplier values(
+	NEWID(),'Oracle Group','Butwal','9800994456','2016-7-8','')
+	;
+INSERT INTO Supplier values(
+	NEWID(),'Natraj Publication','Pokhara','9804554456','2018-2-12','')
+	;
+INSERT INTO Supplier values(
+	NEWID(),'Journal Publication','Narayanghat','9849234456','2017-4-23','')
+	;
+INSERT INTO Supplier values(
+	NEWID(),'Himalayan Times','Pulchowk','9845678756','2016-7-25','')
+	;
+INSERT INTO Supplier values(
+	NEWID(),'Cello ','Chitwan','9844567756','2015-6-12','')
+	;
+INSERT INTO Supplier values(
+	NEWID(),'Cambridge Publication','UK','9849000000','2015-2-15','')
+	;
+INSERT INTO Supplier values(
+	NEWID(),'Alpine Group','Kakani','9849994456','2016-2-15','')
+	;
+INSERT INTO Supplier values(
+	NEWID(),'Exolotus Publication','Pokhara','986789456','2014-4-15','')
+	;
+INSERT INTO Supplier values(
+	NEWID(),'Snowman','Japan','9849994456','2016-2-15','')
+	;
+INSERT INTO Supplier values(
+	NEWID(),'Ambani Group','India','9849456778','2018-2-15','')
+	;
+INSERT INTO Supplier values(
+	NEWID(),'Nepal Publication','Kathmandu','9845676778','2-2-2018','')
+	;
+#########################INSERT VALUES INTO PRODUCT TABLE###########################################################
+DECLARE @id uniqueidentifier
+set @id=NEWID();
+
+INSERT INTO Product values(
+	@id,'Pen','Normal','Cello','PKT',100,1000);
+INSERT INTO Product values(
+	NEWID(),'Pencil','Normal','Natraj','PKT',200,3000);
+INSERT INTO Product values(
+	NEWID(),'BOOK','Small','Yekta','PIC',50,5000);
+INSERT INTO Product values(
+	NEWID(),'INK','Big','Blue Bird','PIC',40,6000);
+INSERT INTO Product values(
+	NEWID(),'Ball','Small/Big','Adidas','PIC',20,8000);
+INSERT INTO Product values(
+	NEWID(),'Marker','Normal','Snowman','PKT',40,3000);
+INSERT INTO Product values(
+	NEWID(),'NoteBook','Big','','PKT',50,4000);
+INSERT INTO Product values(
+		NEWID(),'Tape','Big','Cell','PKT',29,3000)
+INSERT INTO Product values(
+		NEWID(),'Ring Note','Normal','Himalayan','PKT',23,4000)
+INSERT INTO Product values(
+		NEWID(),'A4','Big','DoubleA','PKT',40,8000)
+INSERT INTO Product values(
+		NEWID(),'Chart','Big','','',24,4000)
+##################################INSERT VALUES INTO PURCHASE##################################################
+DECLARE @id uniqueidentifier
+SET @id=NEWID();
+
+INSERT INTO Purchase VALUES
+	('45a106a4-f677-4015-8b06-0572955f6de5','3/1/2018',50,3434,'9eb2af0c-f39e-414a-bce9-977624d4d0b8',@id);
+INSERT INTO Purchase VALUES
+	('1bcd9a73-c9f7-45d6-9200-23788bd1dbb0','1/1/2018',15,1234,'ba29c324-e05b-45c8-84f8-9846357874b8',NEWID());
+INSERT INTO Purchase VALUES
+	('d4f75575-7206-4ac1-afb1-40dd4e788180','1/1/2017',20,3456,'4f808820-21d7-41e3-8015-9cc4b6c71f72',NEWID());
+INSERT INTO Purchase VALUES
+	('f563e42d-a282-4831-b724-433853deace7','12/12/2017',30,2000,'e5ca661b-fc98-4ae8-b0db-a7a6e7e54ae5',NEWID());
+INSERT INTO Purchase VALUES
+	('84e183c7-8e0c-4474-b892-622585f1f968','1/2/2016',40,4500,'a8194f71-e981-4018-a038-af8d46dcbe44',NEWID());
+INSERT INTO Purchase VALUES
+	('c03d3000-6398-44ea-9627-86d80bc0d580','2/12/2017',50,5000,'4d801e31-43b6-4ab9-9286-ba6955ab0a3a',NEWID());
+INSERT INTO Purchase VALUES
+	('d45dae0e-e40f-4b9b-ae20-a1c3c65df060','12/12/2016',43,4300,'5b1ad13d-5dcf-4f6d-a928-c908f0fba61d',NEWID());
+
+
+
+
+
+
+
+
+####################################INSERT VALUES INTO CUSTOMER######################################################
+
+DECLARE @id uniqueidentifier
+SET @id=NEWID();
+
+INSERT INTO Customer VALUES(
+	@id,'Ram Sharma','kathmandu-1',9844448907);
+INSERT INTO Customer VALUES(
+	NEWID(),'Rohan Shrestha','Lalitpur-1',9844445555);
+INSERT INTO Customer VALUES(
+	NEWID(),'Hari Bista','Pokhara-3',9822448917);
+INSERT INTO Customer VALUES(
+	NEWID(),'Gopal Bista','Hetuda-3',9820342156);
+INSERT INTO Customer VALUES(
+	NEWID(),'Saroj Poudel','Bhaktapur',9837928917);
+INSERT INTO Customer VALUES(
+	NEWID(),'Rohit Gurung','Pokhara-3',9812367891);
+INSERT INTO Customer VALUES(
+	NEWID(),'Appy Maharjan','Kathmandu',9800003456);
+INSERT INTO Customer VALUES(
+	NEWID(),'Nikesh Baidya','Chitwan',9834567891);
+INSERT INTO Customer VALUES(
+	NEWID(),'Rahul Gandi','Narayanghat',9834521213);
+INSERT INTO Customer VALUES(
+	NEWID(),'Rahul Khan','Kaski',9833669911);
+
+#######################################DATA SECURITY (KEYS)####################################################
+USE Stationary_Sales;
+
+CREATE MASTER KEY ENCRYPTION BY PASSWORD ='Stationary';
+
+CREATE CERTIFICATE Role_Cer
+WITH SUBJECT='Role_Certificate';
+
+CREATE SYMMETRIC KEY User_key
+WITH ALGORITHM =AES_256
+ENCRYPTION BY CERTIFICATE Role_cer 
+
+OPEN SYMMETRIC KEY User_key

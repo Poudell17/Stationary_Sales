@@ -1,3 +1,5 @@
+************************************************** USING MSSQL FOR DATABASE ****************************************************
+
 CREATE TABLE UserInfo(
 	UserId	            uniqueidentifier not null,
 	UserName	    varchar(200),
@@ -82,4 +84,51 @@ namespace WindowsFormsApplication1
         }
     }
 }
+
+################################################# Store Procedure ##########################################################
+		
+||||||||||||||||||||||||||||||||||||||||||||->For Product Table Procedure:||||||||||||||||||||||||||||||||||||||||||||||||
+
+---------------------------->INSERT->(execute dbo.productinsert '" + txtProductName.Text + "','" + comSize.Text + "','" + txtBrand.Text + "','"
+ 	+ comUOM.Text + "','" + txtMinStok.Text + "','" + txtSalesPrice.Text + "')
+
+CREATE PROCEDURE productinsert
+@productname varchar(100),@size varchar(50),@brand varchar(90),@uom varchar(50),@minstock int, @salesprice int
+AS BEGIN 
+Insert Into Product Values(NEWID(),@productname,@size,@brand,@uom,@minstock,@salesprice );
+End
+
+-------------------------->UPDATE->(execute dbo.productupdate '"+txtProductName.Text+"','"+comSize.Text+"','"+txtBrand.Text+"','"+comUOM.Text+"','"+
+	txtMinStok.Text+"','"+txtSalesPrice.Text+"','"+txtProductid.Text+"')
+
+CREATE PROCEDURE productupdate			//create procedure and declare variable
+@productname varchar(100),@size varchar(50),@brand varchar(90),@uom varchar(50),@minstock int, @salesprice int,@productid uniqueidentifier
+AS BEGIN						//update data
+UPDATE Product SET Product_Name=@productname, Size=@size, Brand=@brand,UOM=@uom,MinStockLevel=@minstock,Sales_Price=@salesprice where Product_Id=@productid
+END
+
+------------------------>DELETE->(execute dbo.productdelete '" + txtProductid.Text + "')
+
+CREATE PROCEDURE productdelete
+@productid uniqueidentifier
+AS BEGIN
+DELETE FROM Product WHERE Product_Id=@productid;
+END
+
+
+
+#################################################### Function#################################################################
+->It is same as store procedure :
+
+CREATE FUNCTION GetProductName(@productid int)  --it takes input value of productid &return productname
+returns varchar(200)
+
+AS BEGIN 
+Declare @productName varchar(200)
+SELECT @productName=Product_Name FROM Product WHERE Product_Id=@productid
+
+return @productName
+END
+
+
 
